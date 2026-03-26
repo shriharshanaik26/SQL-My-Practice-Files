@@ -71,3 +71,20 @@ from employee_salary;
 
 -- Subqueries
 -- Subqueries are nested queries that are used to perform operations that require multiple steps.
+
+Select first_name, last_name, dept_id from employee_salary;
+
+-- Get the employee_id of employees in department 1 and then use that to get their demographics
+Select * from employee_demographics
+where employee_id in (select employee_id from employee_salary where dept_id = 1);
+
+Select first_name, last_name, salary, 
+(Select round(avg(salary)) from employee_salary) as AverageSalary
+from employee_salary;
+
+
+-- Get the average age of employees in each department and then get the overall average age
+Select round(AVG(max_age), 2) as AverageAge from 
+(Select gender, avg(age) as average_age, max(age) as max_age, min(age) as min_age
+from employee_demographics
+GROUP BY gender) as Aggregated_table;
