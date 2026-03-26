@@ -44,3 +44,30 @@ from employee_demographics;
 -- Locating the position of a substring within a string
 Select first_name, position('a' in first_name) as PositionOfA
 from employee_demographics;
+
+
+-- Case Statements
+-- Case statements are used to perform conditional logic in SQL queries.
+
+-- Categorizing employees based on age using case statements
+Select first_name, last_name, age,
+Case
+    when age < 30 then 'Young'
+    when age >= 30 and age < 50 then 'Old'
+    else 'At Risk'
+end as AgeGroup
+from employee_demographics;
+
+-- Salary increase based on current salary using case statements
+Select first_name, last_name, salary,
+case 
+    when salary < 50000 then salary * 1.05
+    when salary >= 50000 then salary * 1.07
+end as New_Salary,
+case 
+    when dept_id = 6 then salary * 0.1
+end as Bonus
+from employee_salary;
+
+-- Subqueries
+-- Subqueries are nested queries that are used to perform operations that require multiple steps.
