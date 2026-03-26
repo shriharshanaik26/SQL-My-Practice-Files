@@ -41,3 +41,6 @@ FROM employee_demographics;
 Select first_name, replace(first_name, 'a', 'X') as ReplacedFirstName
 from employee_demographics;
 
+-- Locating the position of a substring within a string
+Select first_name, position('a' in first_name) as PositionOfA
+from employee_demographics;

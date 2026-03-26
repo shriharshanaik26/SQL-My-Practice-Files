@@ -101,3 +101,8 @@ Shriharsha Naik
 ## ⭐ Acknowledgment
 
 Special thanks to Alex The Analyst for creating beginner-friendly and practical SQL learning content.
+
+
+## Note: You can find the youtbe playlist here:
+Youtube: https://youtu.be/OT1RErkfLNQ?si=F4SFUHAd5Jz1-ank
+GitHub: https://github.com/AlexTheAnalyst/MySQL-YouTube-Series
